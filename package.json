@@ -1,26 +1,33 @@
 {
-  "name": "ListReport_Sample",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^7",
-    "@sap/cds-mtxs": "^1.9",
-    "express": "^4",
-    "@sap/xssec": "^3",
-    "passport": "^0",
-    "@sap/cds-hana": "^2"
-  },
-  "devDependencies": {
-    "@cap-js/sqlite": "^1",
-    "@sap/cds-dk": "^7"
-  },
-  "scripts": {
-    "start": "cds-serve"
-  },
-  "cds": {
-    
-  }
+    "name": "ListReport_Sample",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/cds-mtxs": "^1.9",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "passport": "^0"
+    },
+    "devDependencies": {
+        "@cap-js/sqlite": "^1",
+        "@sap/cds-dk": "^7",
+        "@sap/ux-specification": "^1.120.1",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-listreport_frontend": "cds watch --open listreport_frontend/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy ListReport_Sample --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    },
+    "cds": {},
+    "sapux": [
+        "app/listreport_frontend"
+    ]
 }
