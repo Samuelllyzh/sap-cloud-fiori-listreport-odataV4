@@ -21,10 +21,10 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
-    requires:
-      - name: ListReport_Sample-auth
-      - name: ListReport_Sample-db
-      - name: ListReport_Sample-logging
+    # requires:
+      # - name: ListReport_Sample-auth
+      # - name: ListReport_Sample-db
+      # - name: ListReport_Sample-logging
 
   - name: ListReport_Sample-mtx
     type: nodejs
@@ -61,8 +61,8 @@ modules:
           name: srv-api # must be used in xs-app.json as well
           url: ~{srv-url}
           forwardAuthToken: true
-      - name: ListReport_Sample-auth
-      - name: ListReport_Sample-logging
+      # - name: ListReport_Sample-auth
+      # - name: ListReport_Sample-logging
 
 resources:
   - name: ListReport_Sample-registry

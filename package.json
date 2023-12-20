@@ -21,14 +21,6 @@
     "start": "cds-serve"
   },
   "cds": {
-    "profile": "with-mtx-sidecar",
-    "requires": {
-      "multitenancy": true,
-      "auth": "xsuaa",
-      "db": "hana"
-    },
-    "features": {
-      "kibana_formatter": true
-    }
+    
   }
 }
